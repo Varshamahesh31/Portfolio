@@ -20,7 +20,7 @@ const About = () => {
           </div>
           <div className="about-image">
             <div className="image-placeholder">
-              <img src='/varsha.jpeg'></img>
+              <img src='/varsha.jpeg' alt='Varsha Mahesh' />
             </div>
           </div>
         </div>

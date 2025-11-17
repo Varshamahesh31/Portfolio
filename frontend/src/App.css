@@ -71,15 +71,18 @@ body {
     gap: 2rem;
 }
 
-.nav-menu a {
+.nav-menu button {
     color: var(--cream);
-    text-decoration: none;
+    background: none;
+    border: none;
     font-weight: 400;
+    font-size: inherit;
+    font-family: inherit;
     transition: color 0.3s ease;
     cursor: pointer;
 }
 
-.nav-menu a:hover {
+.nav-menu button:hover {
     color: var(--gold);
 }
 
