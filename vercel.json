@@ -10,10 +10,7 @@
     },
     {
       "src": "backend/server.js",
-      "use": "@vercel/node",
-      "config": {
-        "maxLambdaSize": "10mb"
-      }
+      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -22,8 +19,15 @@
       "dest": "/backend/server.js"
     },
     {
+      "src": "/static/(.*)",
+      "headers": {
+        "Cache-Control": "public, max-age=31536000, immutable"
+      },
+      "dest": "/frontend/build/static/$1"
+    },
+    {
       "src": "/(.*)",
-      "dest": "/frontend/$1"
+      "dest": "/frontend/build/index.html"
     }
   ]
 }

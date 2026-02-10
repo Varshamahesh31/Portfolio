@@ -30,7 +30,7 @@ const Contact = () => {
 
     try {
       const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5001';
-      const response = await axios.post(`${apiUrl}/api/contact`, formData);
+      // const response = await axios.post(`${apiUrl}/api/contact`, formData);
       
       setSubmitStatus('success');
       showToast('success', 'Message sent successfully! Check your email for confirmation.');

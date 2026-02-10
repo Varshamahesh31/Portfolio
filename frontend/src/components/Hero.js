@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+  
+  const titles = ['Software Developer', 'Fresher', 'DSA Enthusiast', 'Tech Enthusiast'];
+  const period = 2000;
 
 const Hero = () => {
   const [text, setText] = useState('');
@@ -6,8 +9,8 @@ const Hero = () => {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
 
-  const titles = ['Software Developer', 'Fresher', 'DSA Enthusiast', 'Tech Enthusiast'];
-  const period = 2000;
+
+
 
   useEffect(() => {
     const handleType = () => {
