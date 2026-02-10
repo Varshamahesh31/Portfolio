@@ -7,14 +7,20 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
+import Timeline from './components/Timeline';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
+      <ScrollProgress />
+      <BackToTop />
       <Navbar />
       <Hero />
       <About />
+      <Timeline />
       <Skills />
       <Projects />
       <Achievements />
@@ -25,3 +31,4 @@ function App() {
 }
 
 export default App;
+

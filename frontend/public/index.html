@@ -1,12 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Varsha Mahesh - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div id="root"></div>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3C2415" />
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Varsha Mahesh - Portfolio showcasing projects, skills, achievements, and professional experience."
+    />
+    <meta
+      name="keywords"
+      content="Varsha Mahesh, Portfolio, Web Developer, Projects, Skills, Achievements, Bangalore, India"
+    />
+    <meta name="author" content="Varsha Mahesh" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://varsha-mahesh-portfolio.vercel.app/"
+    />
+    <meta property="og:title" content="Varsha Mahesh" />
+    <meta
+      property="og:description"
+      content="Portfolio showcasing projects, skills, and achievements."
+    />
+    <meta property="og:image" content="%PUBLIC_URL%/varsha.jpeg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Varsha Mahesh" />
+    <meta
+      name="twitter:description"
+      content="Portfolio showcasing projects, skills, and achievements."
+    />
+    <meta name="twitter:image" content="%PUBLIC_URL%/varsha.jpeg" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://varsha-mahesh-portfolio.vercel.app/" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Varsha Mahesh</title>
+
+    <style>
+      /* Critical CSS for faster loading */
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5e6d3;
+      }
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #3c2415;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+      }
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 4px solid #f5e6d3;
+        border-top-color: #d4af37;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <!-- Loading Screen -->
+      <div class="loading-screen">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,18 +1,22 @@
 import React from 'react';
 
 const Skills = () => {
-  const skillsData = [
+const skillsData = [
     {
       category: "Frontend",
       skills: ["React", "JavaScript", "HTML","CSS", "Tailwind CSS"]
     },
     {
-      category: "Backend", 
+      category: "Backend",
       skills: ["Node.js", "Express", "MongoDB", "Cloud hosting"]
     },
     {
       category: "Data Analytics",
       skills: ["Python", "SQL", "Excel", "PowerBi", "Tableau"]
+    },
+    {
+      category: "DSA in Python",
+      skills: ["Arrays", "Linked Lists", "Trees", "Graphs", "Dynamic Programming", "Leetcode: 10+ Problems Solved"]
     }
   ];
 

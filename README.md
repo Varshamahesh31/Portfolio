@@ -6,8 +6,6 @@ A modern React.js portfolio website with Node.js backend functionality.
 
 - **Frontend**: React.js with enhanced animations and responsive design
 - **Backend**: Node.js/Express with email functionality
-- **Cool Home Page**: Interactive particles, floating elements, and smooth animations
-- **Photo Management**: Static image integration
 - **Contact Form**: Real-time email sending with nodemailer
 - **Responsive Design**: Mobile-first approach for all devices
 
@@ -16,91 +14,139 @@ A modern React.js portfolio website with Node.js backend functionality.
 ```
 portfolio/
 ├── frontend/           # React.js application
+│   ├── public/
+│   │   ├── index.html
+│   │   ├── varsha.jpeg
+│   │   ├── Amazon.jpg
+│   │   ├── Corizo.jpg
+│   │   ├── IBM.jpg
+│   │   └── VarshaCV.pdf
 │   ├── src/
 │   │   ├── components/
+│   │   │   ├── About.js
+│   │   │   ├── Achievements.js
+│   │   │   ├── BackToTop.js
+│   │   │   ├── Contact.js
+│   │   │   ├── Footer.js
+│   │   │   ├── Hero.js
+│   │   │   ├── Navbar.js
+│   │   │   ├── Projects.js
+│   │   │   ├── ScrollProgress.js
+│   │   │   ├── Skills.js
+│   │   │   ├── Testimonials.js
+│   │   │   ├── Timeline.js
+│   │   │   ├── Toast.js
+│   │   │   └── StatsCounter.js
 │   │   ├── App.js
-│   │   └── App.css
-│   ├── public/
+│   │   ├── App.css
+│   │   └── index.js
 │   └── package.json
 ├── backend/            # Node.js/Express server
 │   ├── server.js
-│   ├── package.json
-│   └── .env
-└── package.json       # Root package manager
+│   └── package.json
+├── vercel.json        # Vercel deployment configuration
+├── .gitignore
+└── README.md
 ```
 
 ## 🛠️ Setup Instructions
 
-### Quick Start (Recommended)
-```bash
-# Install all dependencies
-npm run install-all
+### 1. Install Dependencies
 
-# Start both frontend and backend
-npm run dev
-```
-
-### Manual Setup
 ```bash
-# Install root dependencies
+# Install frontend dependencies
+cd frontend
 npm install
 
-# Install frontend dependencies
-npm run install-frontend
-
 # Install backend dependencies
-npm run install-backend
-
-# Start development servers
-npm run dev
+cd ../backend
+npm install
 ```
 
-### Individual Commands
-```bash
-# Frontend only (http://localhost:3000)
-npm run start-frontend
+### 2. Configure Environment Variables
 
-# Backend only (http://localhost:5001)
-npm run start-backend
+Create a `.env` file in the `backend/` directory:
 
-# Build for production
-npm run build
-```
-
-## 🔧 Configuration
-
-### Email Setup
-1. Update `backend/.env` with your Gmail credentials:
 ```env
+# Email Configuration (Gmail with App Password)
 EMAIL_USER=your-email@gmail.com
 EMAIL_PASS=your-app-password
+CONTACT_RECEIVER=varshamahesh3101@gmail.com
+
+# Server Configuration
 PORT=5001
+
+# SMTP Configuration (optional - for production email)
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-email@gmail.com
+SMTP_PASS=your-app-password
 ```
 
-2. Enable 2FA and generate App Password in Gmail settings
+### 3. Run Locally
 
-### Image Setup
+```bash
+# Terminal 1 - Start backend
+cd backend
+npm start
+
+# Terminal 2 - Start frontend
+cd frontend
+npm start
+```
+
+- Frontend: http://localhost:3000
+- Backend API: http://localhost:5001
+
+## 🚀 Vercel Deployment
+
+### Automatic Deployment
+
+1. Push your code to GitHub
+2. Go to [Vercel Dashboard](https://vercel.com/dashboard)
+3. Click "Add New Project"
+4. Import your GitHub repository
+5. Vercel will auto-detect the configuration from `vercel.json`
+6. Click "Deploy"
+
+### Manual Deployment
+
+```bash
+# Install Vercel CLI globally
+npm install -g vercel
+
+# Deploy to Vercel
+vercel
+```
+
+### Environment Variables in Vercel
+
+Add these in Vercel Dashboard → Project Settings → Environment Variables:
+
+| Name             | Value                      | Environment |
+| ---------------- | -------------------------- | ----------- |
+| EMAIL_USER       | your-email@gmail.com       | Production  |
+| EMAIL_PASS       | your-app-password          | Production  |
+| CONTACT_RECEIVER | varshamahesh3101@gmail.com | Production  |
+| SMTP_HOST        | smtp.gmail.com             | Production  |
+| SMTP_PORT        | 587                        | Production  |
+| SMTP_SECURE      | false                      | Production  |
+
+## 🔧 Email Setup (Gmail)
+
+1. Enable 2-Factor Authentication on your Gmail account
+2. Go to Google Account → Security → App Passwords
+3. Create a new app password
+4. Use that password in `EMAIL_PASS` environment variable
+
+## 📸 Image Setup
+
 Place your images in `frontend/public/`:
-- `profile.jpg` - Your profile photo
-- `project1.jpg`, `project2.jpg`, `project3.jpg` - Project screenshots
-- `achievement1.jpg`, `achievement2.jpg`, `achievement3.jpg` - Achievement photos
+
+- `varsha.jpeg` - Your profile photo
+- `Amazon.jpg`, `Corizo.jpg`, `IBM.jpg` - Achievement/company logos
 - `VarshaCV.pdf` - Your resume
-
-## 🎨 Cool Features
-
-### Enhanced Home Page
-- **Interactive Particles**: Mouse-responsive background effects
-- **Floating Elements**: Animated circles and squares
-- **Typing Effect**: Animated name with cursor
-- **Glowing Text**: Pulsing glow effect on title
-- **Smooth Animations**: Fade-in effects and hover interactions
-- **Responsive Design**: Optimized for all screen sizes
-
-### Backend Features
-- **Port Management**: Automatic port conflict resolution
-- **Email Integration**: Real-time contact form processing
-- **Error Handling**: Comprehensive error management
-- **CORS Support**: Cross-origin request handling
 
 ## 🌐 API Endpoints
 
@@ -114,24 +160,10 @@ Place your images in `frontend/public/`:
 - **Mobile**: 480px - 767px
 - **Small Mobile**: < 480px
 
-## 🚀 Deployment
-
-### Frontend (Netlify/Vercel)
-```bash
-npm run build
-# Deploy the frontend/build folder
-```
-
-### Backend (Heroku/Railway)
-```bash
-# Deploy the backend folder
-# Set environment variables in hosting platform
-```
-
 ## 📄 License
 
 MIT License - feel free to use this project for your own portfolio!
 
 ---
 
-**Portfolio by Varsha Mahesh** - Full Stack Developer
+**Portfolio by Varsha Mahesh**

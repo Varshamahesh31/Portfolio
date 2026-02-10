@@ -8,9 +8,6 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="logo-container">
-          <div className="logo">VM</div>
-        </div>
         <ul className="nav-menu">
           <li><button onClick={() => scrollToSection('home')}>Home</button></li>
           <li><button onClick={() => scrollToSection('about')}>About</button></li>
