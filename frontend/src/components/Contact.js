@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -29,8 +28,12 @@ const Contact = () => {
     setSubmitStatus(null);
 
     try {
-      const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5001';
-      // const response = await axios.post(`${apiUrl}/api/contact`, formData);
+      // const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      // const response = await fetch(`${apiUrl}/api/contact`, {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(formData)
+      // });
       
       setSubmitStatus('success');
       showToast('success', 'Message sent successfully! Check your email for confirmation.');
