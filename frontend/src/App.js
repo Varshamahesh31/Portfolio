@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import WhatIBuild from './components/WhatIBuild';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -19,11 +20,12 @@ function App() {
       <BackToTop />
       <Navbar />
       <Hero />
-      <About />
-      <Timeline />
+      <WhatIBuild />
       <Skills />
       <Projects />
+      <Timeline />
       <Achievements />
+      <About />
       <Contact />
       <Footer />
     </div>
@@ -31,4 +33,3 @@ function App() {
 }
 
 export default App;
-

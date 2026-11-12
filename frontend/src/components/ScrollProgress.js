@@ -7,20 +7,19 @@ const ScrollProgress = () => {
     const handleScroll = () => {
       const totalScroll = document.documentElement.scrollTop;
       const windowHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      const scroll = `${totalScroll / windowHeight}`;
-
-      setScrollProgress(Number(scroll));
+      const scroll = windowHeight > 0 ? totalScroll / windowHeight : 0;
+      setScrollProgress(scroll);
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
-    <div className="scroll-progress-container">
+    <div className="scroll-progress-container" aria-hidden="true">
       <div 
         className="scroll-progress-bar" 
-        style={{ width: `${scrollProgress * 100}%` }}
+        style={{ width: `${Math.min(100, Math.max(0, scrollProgress * 100))}%` }}
       />
     </div>
   );
