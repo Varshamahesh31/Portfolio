@@ -1,44 +1,58 @@
 import React from 'react';
 import portfolioData from '../data/portfolioData';
+import TiltCard from './TiltCard';
 
 const Timeline = () => {
   const items = portfolioData.experienceEducation;
 
   return (
-    <section id="timeline" className="timeline">
+    <section id="timeline" className="timeline" aria-label="Professional and Educational Journey">
       <div className="timeline-container-wrap">
         <div className="timeline-header">
-          <span className="section-label">My Path</span>
+          <span className="section-label">Dimensional Roadmap</span>
           <h2 className="timeline-heading">The Journey <em>So Far</em></h2>
           <div className="gold-line centered"></div>
+          <p className="timeline-subheading-text">
+            Milestones across software engineering, academic excellence, and technical training.
+          </p>
         </div>
         <div className="timeline-track">
           <div className="timeline-line"></div>
           {items.map((item, i) => (
             <div key={i} className={`timeline-item ${i % 2 === 0 ? 'left' : 'right'}`}>
-              <div className="timeline-dot"></div>
-              <div className="timeline-card">
-                <div className="timeline-header-row">
-                  <span className="timeline-year">{item.duration}</span>
-                  <span className={`timeline-badge badge-${item.type.toLowerCase()}`}>
-                    {item.type}
-                  </span>
-                </div>
-                <h3>{item.title}</h3>
-                <h4>{item.organization}</h4>
-                <div className="timeline-description">
-                  {item.description.split('\n').map((line, lineIdx) => (
-                    <p key={lineIdx}>{line}</p>
-                  ))}
-                </div>
-                <div className="timeline-skills">
-                  {item.skills.map((skill, skillIdx) => (
-                    <span key={skillIdx} className="skill-tag">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
+              <div className="timeline-dot">
+                <span className="dot-pulse"></span>
               </div>
+              <TiltCard
+                maxTilt={8}
+                scale={1.02}
+                maxGlare={0.16}
+                perspective={950}
+                className="timeline-tilt-card"
+              >
+                <div className="timeline-card">
+                  <div className="timeline-header-row">
+                    <span className="timeline-year">{item.duration}</span>
+                    <span className={`timeline-badge badge-${item.type.toLowerCase()}`}>
+                      {item.type}
+                    </span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <h4>{item.organization}</h4>
+                  <div className="timeline-description">
+                    {item.description.split('\n').map((line, lineIdx) => (
+                      <p key={lineIdx}>{line}</p>
+                    ))}
+                  </div>
+                  <div className="timeline-skills">
+                    {item.skills.map((skill, skillIdx) => (
+                      <span key={skillIdx} className="skill-tag">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </TiltCard>
             </div>
           ))}
         </div>
