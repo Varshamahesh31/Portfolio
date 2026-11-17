@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 0 60px;
+  padding: 120px 0 60px;
   position: relative;
   overflow: hidden;
 }
@@ -18,12 +18,12 @@
 }
 
 .hero-layout {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 1fr 480px;
-  gap: 60px;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 50px;
   align-items: center;
   width: 100%;
   position: relative;
@@ -33,6 +33,8 @@
 .hero-left {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
 .hero-eyebrow {
@@ -49,9 +51,9 @@
 
 .hero-name {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3.5rem, 7vw, 6rem);
+  font-size: clamp(3.4rem, 6.5vw, 5.8rem);
   font-weight: 900;
-  line-height: 1.0;
+  line-height: 1.02;
   color: #F5EFE5;
   margin-bottom: 1.2rem;
   opacity: 0;
@@ -216,20 +218,18 @@
   margin-top: 1px;
 }
 
+/* Right column for Floating 3D Portrait */
 .hero-right {
   position: relative;
-  height: 500px;
-}
-
-.hero-right canvas,
-.hero-right .hero-3d-canvas {
-  width: 100% !important;
-  height: 100% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 560px;
 }
 
 .hero-scroll-indicator {
   position: absolute;
-  bottom: 30px;
+  bottom: 25px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -290,14 +290,18 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .hero-layout {
-    grid-template-columns: 1fr 380px;
-    gap: 40px;
+    grid-template-columns: 1fr 420px;
+    gap: 35px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .hero {
+    padding: 100px 0 50px;
+  }
+
   .hero-layout {
     grid-template-columns: 1fr;
     padding: 0 24px;
@@ -305,16 +309,16 @@
   }
 
   .hero-right {
-    height: 300px;
-    order: -1;
+    min-height: 440px;
+    order: -1; /* Display portrait gracefully above hero text on tablets & mobile */
   }
 
   .hero-name {
-    font-size: 3rem;
+    font-size: 3.2rem;
   }
 
   .hero-stats-row {
-    gap: 1rem;
+    gap: 1.2rem;
   }
 }
 
@@ -326,5 +330,13 @@
   .hero-btn-primary,
   .hero-btn-secondary {
     justify-content: center;
+  }
+
+  .hero-right {
+    min-height: 380px;
+  }
+
+  .hero-name {
+    font-size: 2.8rem;
   }
 }

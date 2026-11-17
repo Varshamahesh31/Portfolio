@@ -1,6 +1,6 @@
 import React from 'react';
 import './Hero.css';
-import Hero3DCanvas from './Hero3DCanvas';
+import FloatingPortrait from './FloatingPortrait';
 import portfolioData from '../data/portfolioData';
 
 const Hero = () => {
@@ -11,8 +11,8 @@ const Hero = () => {
   };
 
   return (
-    <section id="home" className="hero">
-      {/* Background particles */}
+    <section id="home" className="hero" aria-label="Introduction">
+      {/* Background ambient particles */}
       <div className="hero-background">
         <div className="particle particle-1"></div>
         <div className="particle particle-2"></div>
@@ -21,9 +21,9 @@ const Hero = () => {
         <div className="particle particle-5"></div>
       </div>
 
-      {/* Two-column layout */}
+      {/* Two-column editorial layout */}
       <div className="hero-layout">
-        {/* Left column: text content */}
+        {/* Left column: editorial typography and introduction */}
         <div className="hero-left">
           <span className="hero-eyebrow">Hello, I'm</span>
 
@@ -42,9 +42,10 @@ const Hero = () => {
             <button
               className="hero-btn-primary"
               onClick={() => scrollTo('projects')}
+              id="hero-view-work-btn"
             >
               View My Work
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </button>
@@ -52,15 +53,16 @@ const Hero = () => {
             <button
               className="hero-btn-secondary"
               onClick={() => scrollTo('contact')}
+              id="hero-connect-btn"
             >
               Let's Connect
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
             </button>
           </div>
 
-          {/* Social icons */}
+          {/* Social links */}
           <div className="hero-social">
             {/* GitHub */}
             <a
@@ -89,7 +91,7 @@ const Hero = () => {
             </a>
           </div>
 
-          {/* Stats row */}
+          {/* Key Stats Row */}
           <div className="hero-stats-row">
             {heroStats.map((stat, i) => (
               <div key={i} className="hero-stat">
@@ -103,9 +105,9 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Right column: 3D canvas */}
+        {/* Right column: Floating 3D Portrait with layered depth & WebGL background */}
         <div className="hero-right">
-          <Hero3DCanvas />
+          <FloatingPortrait />
         </div>
       </div>
 
@@ -113,10 +115,10 @@ const Hero = () => {
       <button
         className="hero-scroll-indicator"
         onClick={() => scrollTo('what-i-build')}
-        aria-label="Scroll down"
+        aria-label="Scroll down to What I Build"
       >
         <span>Scroll</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M12 5v14M5 12l7 7 7-7" />
         </svg>
       </button>
