@@ -85,7 +85,6 @@ const Achievements = () => {
     <section id="achievements" className="achievements" aria-label="Achievements and Certifications">
       <div className="achievements-container">
         <div className="achievements-header">
-          <span className="section-label">Verified Milestones</span>
           <h2>Milestones & <em>Achievements</em></h2>
           <div className="gold-line centered"></div>
           <p className="achievements-subtitle">

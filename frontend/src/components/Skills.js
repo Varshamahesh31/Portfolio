@@ -18,13 +18,13 @@ const styles = `
   overflow: hidden;
 }
 .skills-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 40px;
 }
 .skills-header {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
 }
 .skills-subheading {
   color: #B9A99A;
@@ -55,18 +55,19 @@ const styles = `
 }
 .skills-layout {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 3rem;
+  grid-template-columns: 380px 1fr;
+  gap: 2.5rem;
   align-items: center;
 }
 .skills-orbit-wrap {
   background: rgba(36,24,19,0.55);
   border: 1px solid rgba(198,155,50,0.2);
   border-radius: 24px;
-  padding: 1.5rem;
+  padding: 1.2rem;
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
   backdrop-filter: blur(12px);
   position: relative;
+  width: 100%;
 }
 .skills-orbit-title {
   text-align: center;
@@ -80,7 +81,8 @@ const styles = `
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1.8rem;
+  width: 100%;
 }
 .skill-card-tilt {
   display: block;
@@ -89,7 +91,7 @@ const styles = `
   background: rgba(36,24,19,0.7);
   border: 1px solid rgba(198,155,50,0.15);
   border-radius: 20px;
-  padding: 2rem;
+  padding: 2.2rem 2.4rem;
   transition: all 0.3s ease;
   height: 100%;
 }
@@ -156,10 +158,14 @@ const styles = `
   color: #C69B32;
   font-size: 0.7rem;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1100px) {
   .skills-layout {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+  .skills-orbit-wrap {
+    max-width: 480px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 640px) {
@@ -200,7 +206,6 @@ const Skills = () => {
           <div className="skills-layout">
             {/* Interactive 3D Orbit */}
             <div className="skills-orbit-wrap">
-              <div className="skills-orbit-title">Interactive 3D Technology Orbit</div>
               <Skills3DOrbit
                 onSelectTech={handleSelectTech}
                 selectedTech={selectedTech}

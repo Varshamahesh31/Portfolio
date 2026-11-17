@@ -76,7 +76,7 @@ const FloatingPortrait = () => {
         {/* Bottom-Right Minimal Metric Pill */}
         <div className="floating-editorial-badge badge-bottom-right">
           <span className="badge-gold-icon">◈</span>
-          <span className="badge-title">CGPA 8.91 / 10</span>
+          <span className="badge-title">CGPA 8.90 / 10</span>
         </div>
 
         {/* Top-Left Delicate Gold Line Motif */}

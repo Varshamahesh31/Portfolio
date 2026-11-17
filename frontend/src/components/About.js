@@ -32,7 +32,7 @@ const About = () => {
               <TiltCard maxTilt={8} scale={1.03} maxGlare={0.15} className="about-pill-tilt">
                 <div className="about-pill">
                   <span className="pill-icon">🎓</span>
-                  <span>B.E. Computer Science (CGPA: 8.91)</span>
+                  <span>B.E. Computer Science (CGPA: 8.90)</span>
                 </div>
               </TiltCard>
             </div>
@@ -82,7 +82,7 @@ const About = () => {
                   <span>Full-Stack & Backend</span>
                 </div>
                 <div className="profile-3d-floating-tag">
-                  <span>CGPA 8.91 / 10</span>
+                  <span>CGPA 8.90 / 10</span>
                 </div>
               </div>
             </TiltCard>

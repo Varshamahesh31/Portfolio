@@ -9,7 +9,6 @@ const Timeline = () => {
     <section id="timeline" className="timeline" aria-label="Professional and Educational Journey">
       <div className="timeline-container-wrap">
         <div className="timeline-header">
-          <span className="section-label">Dimensional Roadmap</span>
           <h2 className="timeline-heading">The Journey <em>So Far</em></h2>
           <div className="gold-line centered"></div>
           <p className="timeline-subheading-text">

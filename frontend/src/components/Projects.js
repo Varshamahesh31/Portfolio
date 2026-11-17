@@ -73,7 +73,6 @@ const Projects = () => {
     <section id="projects" className="projects">
       <div className="projects-container">
         <div className="projects-header">
-          <span className="section-label">Dimensional Showcase</span>
           <h2>Selected <em>Work</em></h2>
           <div className="gold-line centered"></div>
           <p className="projects-subtitle">

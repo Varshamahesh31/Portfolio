@@ -34,7 +34,7 @@ export const portfolioData = {
   // Hero Section Statistics
   heroStats: [
     {
-      number: "3",
+      number: "5+",
       label: "Featured Projects"
     },
     {
@@ -82,7 +82,7 @@ export const portfolioData = {
       organization: "Visvesvaraya Technological University",
       duration: "Expected 2026",
       type: "Education",
-      description: "Expected graduation: 2026\nCGPA: 8.91/10",
+      description: "Expected graduation: 2026\nCGPA: 8.90/10",
       skills: ["OOP", "DSA", "DBMS", "Software Engineering"]
     },
     {
